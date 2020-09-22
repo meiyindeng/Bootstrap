@@ -33,10 +33,10 @@
                         <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                     </ul>
                     <span class="navbar-text">
-                        <a data-toggle="modal" data-target="#loginModal">
+                        <a id="loginButton">
                             <span class="fa fa-sign-in"></span> Login
                         </a>
-                    </span>
+                    </span>        
                 </div>
            
         </div>
@@ -93,9 +93,9 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-sm-3 align-self-center">
-                    <a class="btn btn-warning btn-block btn-sm" role="button" 
-                    data-toggle="modal" 
-                    data-target="#ReserveTable"> Reserve Table</a> 
+                    <a id="reserveButton" class="btn btn-warning btn-block btn-sm" role="button"> 
+                    Reserve Table
+                    </a> 
                 </div>
             </div>
         </div>
@@ -103,8 +103,8 @@
     <div id="ReserveTable" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
-                <div class="modal-header bg-warning">
-                    <h3 class="text-white modal-title">Reserve a Table</h3>
+                <div class="modal-header">
+                    <h3 class="modal-title">Reserve a Table</h3>
                     <button type="button" class="close" data-dismiss="modal">
                         &times;
                     </button>
@@ -356,11 +356,19 @@
                 $("#carouselButton").children('span').addClass('fa-pause');
 
             }
-
         });
         
-    });
+        $("#loginButton").click(function(){
+            $("#loginModal").modal();
+            
+        });
+        $("#reserveButton").click(function(){
+            $("#ReserveTable").modal();
+            
+        });
+    });    
 </script>
+
 
 
 </body>
